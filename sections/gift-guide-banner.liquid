@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div class="page-width banner-content-area">
+  <div class="banner-content-area">
     <div class="banner-text-box">
       {%- if section.settings.heading != blank -%}
         <h1 class="banner-heading">{{ section.settings.heading }}</h1>
@@ -97,14 +97,15 @@
     transform: translateX(5px);
   }
   .banner-content-area {
-    max-width: 1400px;
+    position: absolute;
+    bottom: 60px;
+    left: 40px;
     width: 100%;
-    margin: 0 auto 50px auto; /* Pushes content towards bottom left */
-    padding: 0 40px;
+    max-width: 500px;
     z-index: 2;
   }
   .banner-text-box {
-    max-width: 480px;
+    width: 100%;
   }
   .banner-heading {
     font-size: 56px;
@@ -150,6 +151,7 @@
     text-transform: uppercase;
     font-weight: 600;
     z-index: 2;
+    position: relative;
   }
 
   @media screen and (max-width: 768px) {
@@ -163,8 +165,11 @@
       text-align: center;
     }
     .banner-content-area {
-      margin: 40px auto;
-      padding: 0 20px;
+      position: relative;
+      bottom: auto;
+      left: auto;
+      padding: 40px 20px;
+      max-width: 100%;
     }
     .banner-heading {
       font-size: 38px;
