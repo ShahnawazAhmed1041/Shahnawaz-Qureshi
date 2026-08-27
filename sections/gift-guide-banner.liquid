@@ -1,0 +1,228 @@
+<section class="gift-guide-banner" style="background-image: url('{{ section.settings.background_image | image_url: width: 2000 }}');">
+  <div class="banner-top-bar">
+    <div class="page-width banner-top-flex">
+      {%- if section.settings.logo_text != blank -%}
+        <div class="banner-logo"><span>{{ section.settings.logo_text }}</span></div>
+      {%- endif -%}
+      {%- if section.settings.top_announcement != blank -%}
+        <div class="banner-top-text">{{ section.settings.top_announcement }}</div>
+      {%- endif -%}
+      {%- if section.settings.top_button_label != blank -%}
+        <a href="{{ section.settings.top_button_link }}" class="banner-btn-yellow">
+          {{ section.settings.top_button_label }} <span>&rarr;</span>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="page-width banner-content-area">
+    <div class="banner-text-box">
+      {%- if section.settings.heading != blank -%}
+        <h1 class="banner-heading">{{ section.settings.heading }}</h1>
+      {%- endif -%}
+      {%- if section.settings.description != blank -%}
+        <div class="banner-desc">{{ section.settings.description }}</div>
+      {%- endif -%}
+      {%- if section.settings.shop_button_label != blank -%}
+        <div class="banner-cta-wrapper">
+          <a href="{{ section.settings.shop_button_link }}" class="banner-btn-black">
+            {{ section.settings.shop_button_label }} 
+            <span class="arrow-icon">&rarr;</span>
+          </a>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- if section.settings.footer_tagline != blank -%}
+    <div class="banner-footer-strip">
+      <p>{{ section.settings.footer_tagline }}</p>
+    </div>
+  {%- endif -%}
+</section>
+
+<style>
+  .gift-guide-banner {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-color: #f7f7f7;
+    overflow: hidden;
+  }
+  .banner-top-bar {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.85);
+  }
+  .banner-top-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .banner-logo {
+    border: 2px solid #000;
+    padding: 6px 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 14px;
+  }
+  .banner-top-text {
+    font-size: 14px;
+    color: #111;
+  }
+  .banner-btn-yellow {
+    background-color: #ffe600;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  .banner-btn-yellow span {
+    transition: transform 0.3s ease;
+  }
+  .banner-btn-yellow:hover span {
+    transform: translateX(5px);
+  }
+  .banner-content-area {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+  .banner-text-box {
+    max-width: 500px;
+  }
+  .banner-heading {
+    font-size: 48px;
+    font-family: serif;
+    margin-bottom: 20px;
+    color: #111;
+    line-height: 1.1;
+  }
+  .banner-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  .banner-btn-black {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 220px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+  }
+  .banner-btn-black .arrow-icon {
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .banner-btn-black:hover .arrow-icon {
+    transform: translateX(8px);
+  }
+  .banner-footer-strip {
+    background-color: #fff;
+    text-align: center;
+    padding: 12px;
+    border-top: 1px solid #e5e5e5;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  @media screen and (max-width: 768px) {
+    .banner-top-flex {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+    }
+    .banner-heading {
+      font-size: 36px;
+    }
+    .banner-content-area {
+      margin: 30px auto;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Gift Guide Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Line Art Image"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo Text",
+      "default": "TISSO VISON"
+    },
+    {
+      "type": "text",
+      "id": "top_announcement",
+      "label": "Top Announcement Text",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "top_button_label",
+      "label": "Top Button Label",
+      "default": "CHOOSE GIFT"
+    },
+    {
+      "type": "url",
+      "id": "top_button_link",
+      "label": "Top Button Link"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "The Gift Guide"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+    },
+    {
+      "type": "text",
+      "id": "shop_button_label",
+      "label": "Shop Button Label",
+      "default": "SHOP NOW"
+    },
+    {
+      "type": "url",
+      "id": "shop_button_link",
+      "label": "Shop Button Link"
+    },
+    {
+      "type": "text",
+      "id": "footer_tagline",
+      "label": "Footer Strip Tagline",
+      "default": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gift Guide Banner"
+    }
+  ]
+}
+{% endschema %}
