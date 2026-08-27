@@ -44,43 +44,50 @@
 <style>
   .gift-guide-banner {
     position: relative;
+    height: 870px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
     background-size: cover;
-    background-position: center;
-    background-color: #f7f7f7;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     overflow: hidden;
   }
   .banner-top-bar {
     border-bottom: 1px solid #e5e5e5;
-    padding: 15px 20px;
-    background: rgba(255, 255, 255, 0.85);
+    padding: 20px 40px;
+    background: #ffffff;
+    z-index: 2;
   }
   .banner-top-flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
+    width: 100%;
   }
   .banner-logo {
     border: 2px solid #000;
-    padding: 6px 12px;
+    padding: 8px 16px;
     font-weight: 700;
     letter-spacing: 1px;
-    font-size: 14px;
+    font-size: 15px;
   }
   .banner-top-text {
-    font-size: 14px;
+    font-size: 15px;
     color: #111;
   }
   .banner-btn-yellow {
     background-color: #ffe600;
     color: #000;
-    padding: 10px 20px;
+    padding: 12px 24px;
     text-decoration: none;
     font-weight: 600;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     transition: transform 0.3s ease, background-color 0.3s ease;
   }
   .banner-btn-yellow span {
@@ -90,35 +97,37 @@
     transform: translateX(5px);
   }
   .banner-content-area {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 20px;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    z-index: 2;
   }
   .banner-text-box {
-    max-width: 500px;
+    max-width: 480px;
   }
   .banner-heading {
-    font-size: 48px;
+    font-size: 56px;
     font-family: serif;
     margin-bottom: 20px;
     color: #111;
     line-height: 1.1;
   }
   .banner-desc {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.6;
     color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
   }
   .banner-btn-black {
     background-color: #000;
     color: #fff;
-    padding: 15px 30px;
+    padding: 16px 32px;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-    width: 220px;
+    width: 230px;
     font-weight: 500;
     letter-spacing: 1px;
     position: relative;
@@ -134,25 +143,30 @@
   .banner-footer-strip {
     background-color: #fff;
     text-align: center;
-    padding: 12px;
+    padding: 15px;
     border-top: 1px solid #e5e5e5;
     font-size: 12px;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 600;
+    z-index: 2;
   }
 
   @media screen and (max-width: 768px) {
+    .gift-guide-banner {
+      height: auto;
+      min-height: auto;
+    }
     .banner-top-flex {
       flex-direction: column;
       gap: 15px;
       text-align: center;
     }
-    .banner-heading {
-      font-size: 36px;
-    }
     .banner-content-area {
-      margin: 30px auto;
+      padding: 40px 20px;
+    }
+    .banner-heading {
+      font-size: 38px;
     }
   }
 </style>
